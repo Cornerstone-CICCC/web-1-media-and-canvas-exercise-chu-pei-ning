@@ -4,20 +4,99 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Media Exercise</title>
+  <link rel="stylesheet" href="./style.css">
 </head>
 <body>
+  <style>
+    body {
+      background-image: url('./assets/images/background.jpg');
+      background-repeat: no-repeat;
+      background-color: green;
+    }
+  </style>
   <div class="container">
     <!-- AUDIO HTML GOES HERE -->
+    <section class="audio-section">
+      <h2>Audio</h2>
+      <audio controls muted loop>
+        <source src="./assets/audio/piano.wav" type="audio/mpeg">
+        <p>Your browser does not support the audio tag.</p>
+      </audio>
+    </section>
 
     <!-- VIDEO HTML GOES HERE -->
+    <section class="vidio-section">
+      <h2>Video</h2>
+      <video width="500px" controls muted >
+        <source src="./assets/video/ocean.mp4" type="video/mp4">
+        <p>Your browser does not support the video tag.</p>
+      </video>
+    </section>
 
     <!-- IMAGE MAP HTML GOES HERE-->
+    <section class="map-section">
+      <h2>Map</h2>
+      <img src="./assets/images/fruit_table.jpg" width="500px" alt="fruit_table" usemap="#fruit_table">
+      <map id="fruit_table">
+        <area shape="rect" coords="20,250,250,450" href="https://en.wikipedia.org/wiki/Lavandula" alt="Lavandula" title="Lavandula">
+        <area shape="rect" coords="300,300,500,500" href="https://en.wikipedia.org/wiki/Orange_(fruit)" alt="Orange" title="Orange">
+        <area shape="circle" coords="370,160,70" href="https://en.wikipedia.org/wiki/Coffee" alt="Coffee" title="Coffee">
+      </map>
+    </section>
 
     <!-- CANVAS HTML GOES HERE -->
+    <section class="canvas-section">
+      <h2>Canvas</h2>
+      <canvas id="rect-canvas" width="500" height="500" style="background-color: aqua;"></canvas>
+    </section>
   </div>
 
   <script>
     /* CANVAS JAVASCRIPT GOES HERE */
+    const canvas = document.querySelector('#rect-canvas') // this will target the rect-canvas element
+    const context = canvas.getContext('2d')
+
+    context.beginPath()
+    context.moveTo(100, 100)
+    context.lineTo(100, 400)
+    context.strokeStyle = "blue"
+    context.lineWidth = 5
+    context.stroke()
+
+    context.beginPath()
+    context.moveTo(100, 400)
+    context.lineTo(400, 400)
+    context.strokeStyle = "purple"
+    context.lineWidth = 5
+    context.stroke()
+
+    context.beginPath()
+    context.moveTo(400, 400)
+    context.lineTo(400, 100)
+    context.strokeStyle = "red"
+    context.lineWidth = 5
+    context.stroke()
+
+    context.beginPath()
+    context.moveTo(100, 100)
+    context.lineTo(400, 100)
+    context.strokeStyle = "yellow"
+    context.lineWidth = 5
+    context.stroke()
+
+    context.beginPath()
+    context.moveTo(100, 100)
+    context.lineTo(400, 400)
+    context.strokeStyle = "orange"
+    context.lineWidth = 5
+    context.stroke()
+
+    context.beginPath()
+    context.moveTo(400, 100)
+    context.lineTo(100, 400)
+    context.strokeStyle = "gray"
+    context.lineWidth = 5
+    context.stroke()
   </script>
 </body>
 </html>
